@@ -13,9 +13,10 @@ module.exports = (router) => {
        next();
     });
 
-    // /api/
+    // /api
     router.get('/list', players.list);
     router.post('/create', players.create);
     router.post('/update/:id', players.update);
+    router.post('/delete/:id', players.delete);
 
 };
