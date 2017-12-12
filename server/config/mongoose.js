@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 // connect mongoose and configure path
-mongoose.connect('mongodb://localhost/auth');
+mongoose.connect('mongodb://localhost/team_manager');
 mongoose.set('debug', true);
 const models_path = path.join(__dirname, '../models/');
 mongoose.Promise = global.Promise;

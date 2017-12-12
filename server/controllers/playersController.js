@@ -24,7 +24,7 @@ module.exports = {
     },
 
     delete(req, res){
-        Player.remove(req.id)
+        Player.findByIdAndRemove(req.id)
         .then(result => res.json(result))
         .catch(err => res.json(err));
     }

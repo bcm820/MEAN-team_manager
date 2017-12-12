@@ -1,3 +1,34 @@
-<p>
-  game works!
-</p>
+
+<h2 class=text-center>Player Status - Game {{game}}</h2>
+<hr>
+<div class=text-center>
+  <nav>
+    <button class="btn btn-default" (click)=changeGame(1)>Game 1</button>
+    <button class="btn btn-default" (click)=changeGame(2)>Game 2</button>
+    <button class="btn btn-default" (click)=changeGame(3)>Game 3</button>
+  </nav>
+</div>
+<hr>
+<div class=row>
+  <div class=col-sm-12>
+    <h4 *ngIf="players.length === 0" class=text-center>No players added</h4>
+    <table class="table table-striped" *ngIf="players.length > 0">
+      <thead>
+        <tr>
+          <td><strong>Player Name</strong></td>
+          <td><strong>Actions</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{player.name}}</td>
+          <td>
+            <button class="btn btn-sm btn-default" (click)="update(player._id, 'yes', player.game1, player.game2, player.game3)" [ngClass]="{yes: player.status === 'yes'}">Playing</button>
+            <button class="btn btn-sm btn-default" (click)="update(player._id, 'no', player.game1, player.game2, player.game3)" [ngClass]="{no: player.status === 'no'}">Not Playing</button>
+            <button class="btn btn-sm btn-default" (click)="update(player._id, 'maybe', player.game1, player.game2, player.game3)" [ngClass]="{maybe: player.status === 'maybe'}">Undecided</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

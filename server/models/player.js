@@ -14,9 +14,10 @@ const PlayerSchema = new mongoose.Schema({
         required: [false]
     },
 
-    game1: { type: Number },
-    game2: { type: Number },
-    game3: { type: Number }
+    game1: { type: String },
+    game2: { type: String },
+    game3: { type: String },
+    status: { type: String }
 
 },
 { timestamps: true });

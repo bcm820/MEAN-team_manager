@@ -9,7 +9,14 @@ import { Router } from '@angular/router';
 })
 export class AddComponent implements OnInit {
 
-  player = {name:'', position:'', game1:3, game2:3, game3:3}
+  player = {
+    name:'',
+    position:'',
+    game1:'maybe',
+    game2:'maybe',
+    game3:'maybe',
+    status:'maybe'
+  }
   
   constructor(private _ts: TeamService, private _router: Router) { }
 
@@ -18,7 +25,14 @@ export class AddComponent implements OnInit {
 
   add(){
     this._ts.add(this.player).subscribe(res => console.log(res));
-    this.player = {name:'', position:'', game1:3, game2:3, game3:3};
+    this.player = {
+      name:'',
+      position:'',
+      game1:'maybe',
+      game2:'maybe',
+      game3:'maybe',
+      status:'maybe'
+    }
     this._router.navigate(['players','list']);
   }
 

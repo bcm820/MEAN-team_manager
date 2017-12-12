@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  list: any = [];
+  players: any = [];
   
   constructor(private _ts: TeamService, private _router: Router) { }
 
@@ -24,10 +24,10 @@ export class ListComponent implements OnInit {
   }
 
   listPlayers(){
-    this._ts.list().subscribe(list => this.list = list);
+    this._ts.list().subscribe(players => this.players = players);
   }
 
-  add(){
+  addPlayer(){
     this._router.navigate(['players','addplayer'])
   }
 

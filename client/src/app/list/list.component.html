@@ -2,20 +2,22 @@
 <div class=row>
   <div class=col-sm-12>
     <nav>
-      <a href=#><strong>List</strong></a> |
-      <a (click)=add()>Add Player</a>
+      <button class="btn btn-lg btn-default"><strong>List</strong></button>
+      <button class="btn btn-lg btn-default" (click)=addPlayer()>Add Player</button>
     </nav>
+    <hr>
   </div>
 </div>
 
 <div class=row>
   <div class=col-sm-12>
-    <table class="table table-striped">
+    <h4 *ngIf="players.length === 0" class=text-center>No players added</h4>
+    <table class="table table-striped" *ngIf="players.length > 0">
       <thead>
         <tr>
-          <td>Player Name</td>
-          <td>Preferred Position</td>
-          <td>Actions</td>
+          <td><strong>Player Name</strong></td>
+          <td><strong>Preferred Position</strong></td>
+          <td><strong>Actions</strong></td>
         </tr>
       </thead>
       <tbody>
